@@ -1,0 +1,51 @@
+# AWQP CO Waters snapshot builder (D3, D9). Source of truth: AWQP_CO_Waters/snapshot/workflow/;
+# copied here by tools/sync_builder.py. Public agency data only; no secrets.
+name: snapshot
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"   # GitHub may run it late or skip it; S1.4 measures that (runs.csv)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: snapshot
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Previous site (gh-pages)
+        run: |
+          mkdir -p prev site
+          if git fetch --depth=1 origin gh-pages; then
+            for f in snapshot.csv runs.csv alerts_first.json; do
+              git show "origin/gh-pages:$f" > "prev/$f" 2>/dev/null || rm -f "prev/$f"
+            done
+          fi
+          [ -f prev/alerts_first.json ] && cp prev/alerts_first.json site/ || true
+          ls -l prev
+
+      - name: Build
+        run: python builder/build.py --out site --prev prev/snapshot.csv --save-alerts site/alerts_first.json
+
+      - name: Publish to gh-pages (one commit, force-pushed: history does not grow)
+        run: |
+          cd site
+          touch .nojekyll
+          git init -q -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "snapshot $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" gh-pages
