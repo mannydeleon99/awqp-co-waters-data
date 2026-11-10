@@ -39,7 +39,7 @@ jobs:
       - name: Build
         run: python builder/build.py --out site --prev prev/snapshot.csv --save-alerts site/alerts_first.json
 
-      - name: Publish to gh-pages (one commit, force-pushed: history does not grow)
+      - name: Publish to gh-pages (one commit, force-pushed, so history does not grow)
         run: |
           cd site
           touch .nojekyll
