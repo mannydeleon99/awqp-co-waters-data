@@ -4,7 +4,8 @@ name: snapshot
 
 on:
   schedule:
-    - cron: "*/15 * * * *"   # GitHub may run it late or skip it; S1.4 measures that (runs.csv)
+    # Off the round minutes (S1.4, Nov 11 2026): */15 gave 5 scheduled runs in 25 h.
+    - cron: "7,22,37,52 * * * *"   # GitHub may run it late or skip it; S1.4 measures that (runs.csv)
   workflow_dispatch:
 
 permissions:
