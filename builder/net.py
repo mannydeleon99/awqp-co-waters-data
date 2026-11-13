@@ -37,6 +37,18 @@ class Net:
     def get_json(self, url: str, params: list[tuple[str, str]] | dict | None = None,
                  fixture: str | None = None):
         """GET url and parse JSON. Offline: read `fixture` (path under the fixtures dir)."""
+        data = self._get(url, params, fixture, "application/json, application/geo+json")
+        try:
+            return json.loads(data)
+        except json.JSONDecodeError as e:
+            raise FetchError(f"JSONDecodeError: {e} from {url}") from e
+
+    def get_text(self, url: str, params: list[tuple[str, str]] | dict | None = None,
+                 fixture: str | None = None, accept: str = "text/csv") -> str:
+        """GET url as UTF-8 text (CSV). Offline: read `fixture`. An empty body is returned as ''."""
+        return self._get(url, params, fixture, accept).decode("utf-8")
+
+    def _get(self, url: str, params, fixture: str | None, accept: str) -> bytes:
         if self.offline is not None:
             if not fixture:
                 raise FetchError(f"offline: no fixture for {url}")
@@ -45,7 +57,7 @@ class Net:
                 raise FetchError(f"offline: fixture missing: {p}")
             data = p.read_bytes()
             self.bytes += len(data)
-            return json.loads(data)
+            return data
         q = urllib.parse.urlencode(params or [], doseq=True)
         full = f"{url}?{q}" if q else url
         host = urllib.parse.urlsplit(url).netloc
@@ -59,18 +71,17 @@ class Net:
             if wait > 0:
                 time.sleep(wait)
             self.last[host] = time.time()
-            req = urllib.request.Request(full, headers={"User-Agent": USER_AGENT,
-                                                        "Accept": "application/json, application/geo+json"})
+            req = urllib.request.Request(full, headers={"User-Agent": USER_AGENT, "Accept": accept})
             try:
                 with urllib.request.urlopen(req, timeout=TIMEOUT_S) as r:
                     data = r.read()
                 self.bytes += len(data)
-                return json.loads(data)
+                return data
             except urllib.error.HTTPError as e:
                 err = f"HTTP {e.code} from {full}"
                 if e.code not in RETRY_STATUS:
                     break
-            except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as e:
+            except (urllib.error.URLError, TimeoutError) as e:
                 err = f"{type(e).__name__}: {e} from {full}"
             time.sleep(5 * (attempt + 1))
         raise FetchError(err)

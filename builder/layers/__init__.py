@@ -9,9 +9,9 @@ from __future__ import annotations
 
 from datetime import datetime
 
-from . import alerts, calls, flood, normals
+from . import alerts, calls, drought, flood, normals
 
-ALL = [calls, flood, alerts, normals]
+ALL = [calls, flood, alerts, normals, drought]
 
 
 def unix(iso: str | None) -> int | None:
