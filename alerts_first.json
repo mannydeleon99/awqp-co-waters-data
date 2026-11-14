@@ -1,0 +1,254 @@
+{
+ "@context": [
+  "https://geojson.org/geojson-ld/geojson-context.jsonld",
+  {
+   "@version": "1.1",
+   "wx": "https://api.weather.gov/ontology#",
+   "@vocab": "https://api.weather.gov/ontology#"
+  }
+ ],
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7043eeec536cb657ccad2a0fb459607d3245b03c.001.1",
+   "type": "Feature",
+   "geometry": null,
+   "properties": {
+    "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.7043eeec536cb657ccad2a0fb459607d3245b03c.001.1",
+    "@type": "wx:Alert",
+    "id": "urn:oid:2.49.0.1.840.0.7043eeec536cb657ccad2a0fb459607d3245b03c.001.1",
+    "areaDesc": "Kit Carson County; Cheyenne County; Cheyenne; Rawlins; Decatur; Norton; Sherman; Thomas; Sheridan; Graham; Wallace; Logan; Gove; Greeley; Wichita; Dundy; Hitchcock; Red Willow",
+    "geocode": {
+     "SAME": [
+      "008063",
+      "008017",
+      "020023",
+      "020153",
+      "020039",
+      "020137",
+      "020181",
+      "020193",
+      "020179",
+      "020065",
+      "020199",
+      "020109",
+      "020063",
+      "020071",
+      "020203",
+      "031057",
+      "031087",
+      "031145"
+     ],
+     "UGC": [
+      "COZ091",
+      "COZ092",
+      "KSZ001",
+      "KSZ002",
+      "KSZ003",
+      "KSZ004",
+      "KSZ013",
+      "KSZ014",
+      "KSZ015",
+      "KSZ016",
+      "KSZ027",
+      "KSZ028",
+      "KSZ029",
+      "KSZ041",
+      "KSZ042",
+      "NEZ079",
+      "NEZ080",
+      "NEZ081"
+     ]
+    },
+    "affectedZones": [
+     "https://api.weather.gov/zones/forecast/COZ091",
+     "https://api.weather.gov/zones/forecast/COZ092",
+     "https://api.weather.gov/zones/forecast/KSZ001",
+     "https://api.weather.gov/zones/forecast/KSZ002",
+     "https://api.weather.gov/zones/forecast/KSZ003",
+     "https://api.weather.gov/zones/forecast/KSZ004",
+     "https://api.weather.gov/zones/forecast/KSZ013",
+     "https://api.weather.gov/zones/forecast/KSZ014",
+     "https://api.weather.gov/zones/forecast/KSZ015",
+     "https://api.weather.gov/zones/forecast/KSZ016",
+     "https://api.weather.gov/zones/forecast/KSZ027",
+     "https://api.weather.gov/zones/forecast/KSZ028",
+     "https://api.weather.gov/zones/forecast/KSZ029",
+     "https://api.weather.gov/zones/forecast/KSZ041",
+     "https://api.weather.gov/zones/forecast/KSZ042",
+     "https://api.weather.gov/zones/forecast/NEZ079",
+     "https://api.weather.gov/zones/forecast/NEZ080",
+     "https://api.weather.gov/zones/forecast/NEZ081"
+    ],
+    "references": [
+     {
+      "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.a1aa62bcd872d43213c3c93dab01a9f4c016e733.001.1",
+      "identifier": "urn:oid:2.49.0.1.840.0.a1aa62bcd872d43213c3c93dab01a9f4c016e733.001.1",
+      "sender": "w-nws.webmaster@noaa.gov",
+      "sent": "2026-11-13T02:44:00-07:00"
+     },
+     {
+      "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8610ab6e852e292f66e57b2034657b5b8a07fe21.001.1",
+      "identifier": "urn:oid:2.49.0.1.840.0.8610ab6e852e292f66e57b2034657b5b8a07fe21.001.1",
+      "sender": "w-nws.webmaster@noaa.gov",
+      "sent": "2026-11-13T06:07:00-07:00"
+     },
+     {
+      "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.8610ab6e852e292f66e57b2034657b5b8a07fe21.002.1",
+      "identifier": "urn:oid:2.49.0.1.840.0.8610ab6e852e292f66e57b2034657b5b8a07fe21.002.1",
+      "sender": "w-nws.webmaster@noaa.gov",
+      "sent": "2026-11-13T06:07:00-07:00"
+     },
+     {
+      "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.11ce4bd3e7fb3824df2c89f44777454f8917dad5.001.1",
+      "identifier": "urn:oid:2.49.0.1.840.0.11ce4bd3e7fb3824df2c89f44777454f8917dad5.001.1",
+      "sender": "w-nws.webmaster@noaa.gov",
+      "sent": "2026-11-13T06:24:00-07:00"
+     },
+     {
+      "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.11ce4bd3e7fb3824df2c89f44777454f8917dad5.002.1",
+      "identifier": "urn:oid:2.49.0.1.840.0.11ce4bd3e7fb3824df2c89f44777454f8917dad5.002.1",
+      "sender": "w-nws.webmaster@noaa.gov",
+      "sent": "2026-11-13T06:24:00-07:00"
+     }
+    ],
+    "sent": "2026-11-13T07:41:00-07:00",
+    "effective": "2026-11-13T07:41:00-07:00",
+    "onset": "2026-11-13T07:41:00-07:00",
+    "expires": "2026-11-13T10:00:00-07:00",
+    "ends": "2026-11-13T10:00:00-07:00",
+    "status": "Actual",
+    "messageType": "Update",
+    "category": "Met",
+    "severity": "Moderate",
+    "certainty": "Likely",
+    "urgency": "Expected",
+    "event": "Dense Fog Advisory",
+    "sender": "w-nws.webmaster@noaa.gov",
+    "senderName": "NWS Goodland KS",
+    "headline": "Dense Fog Advisory issued November 13 at 7:41AM MST until November 13 at 10:00AM MST by NWS Goodland KS",
+    "description": "* WHAT...Visibility less than one quarter mile in dense fog.\n\n* WHERE...Portions of east central Colorado, northwest and west\ncentral Kansas, and southwest Nebraska.\n\n* WHEN...Until 10 AM MST /11 AM CST/ this morning.\n\n* IMPACTS...Hazardous driving conditions.\n\n* ADDITIONAL DETAILS...Locations with temperatures in the upper 20s\nand lower 30s, such as McCook and Oberlin, can expect dense\nfreezing fog.",
+    "instruction": "Be prepared for rapid reductions in visibility. Drivers are urged to\nslow down, use low beam headlights and leave plenty of following\ndistance. Exercise caution, especially at intersections and highway\nonramps and offramps, where accidents are more likely to occur.",
+    "response": "Execute",
+    "note": null,
+    "parameters": {
+     "AWIPSidentifier": [
+      "NPWGLD"
+     ],
+     "WMOidentifier": [
+      "WWUS73 KGLD 131441"
+     ],
+     "NWSheadline": [
+      "DENSE FOG ADVISORY REMAINS IN EFFECT UNTIL 10 AM MST /11 AM CST/ THIS MORNING"
+     ],
+     "BLOCKCHANNEL": [
+      "EAS",
+      "NWEM",
+      "CMAS"
+     ],
+     "VTEC": [
+      "/O.CON.KGLD.FG.Y.0027.000000T0000Z-261113T1700Z/"
+     ],
+     "eventEndingTime": [
+      "2026-11-13T10:00:00-07:00"
+     ]
+    },
+    "scope": "Public",
+    "code": "IPAWSv1.0",
+    "language": "en-US",
+    "web": "http://www.weather.gov",
+    "eventCode": {
+     "SAME": [
+      "NWS"
+     ],
+     "NationalWeatherService": [
+      "FGY"
+     ]
+    }
+   }
+  },
+  {
+   "id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c46183ce56491c86db08d2a1b01b522939ba4cf1.001.1",
+   "type": "Feature",
+   "geometry": null,
+   "properties": {
+    "@id": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.c46183ce56491c86db08d2a1b01b522939ba4cf1.001.1",
+    "@type": "wx:Alert",
+    "id": "urn:oid:2.49.0.1.840.0.c46183ce56491c86db08d2a1b01b522939ba4cf1.001.1",
+    "areaDesc": "Western Kiowa County; Eastern Kiowa County; Lamar Vicinity/Prowers County",
+    "geocode": {
+     "SAME": [
+      "008061",
+      "008099"
+     ],
+     "UGC": [
+      "COZ095",
+      "COZ096",
+      "COZ098"
+     ]
+    },
+    "affectedZones": [
+     "https://api.weather.gov/zones/forecast/COZ095",
+     "https://api.weather.gov/zones/forecast/COZ096",
+     "https://api.weather.gov/zones/forecast/COZ098"
+    ],
+    "references": [],
+    "sent": "2026-11-13T06:23:00-07:00",
+    "effective": "2026-11-13T06:23:00-07:00",
+    "onset": "2026-11-13T06:23:00-07:00",
+    "expires": "2026-11-13T10:00:00-07:00",
+    "ends": "2026-11-13T10:00:00-07:00",
+    "status": "Actual",
+    "messageType": "Alert",
+    "category": "Met",
+    "severity": "Moderate",
+    "certainty": "Likely",
+    "urgency": "Expected",
+    "event": "Dense Fog Advisory",
+    "sender": "w-nws.webmaster@noaa.gov",
+    "senderName": "NWS Pueblo CO",
+    "headline": "Dense Fog Advisory issued November 13 at 6:23AM MST until November 13 at 10:00AM MST by NWS Pueblo CO",
+    "description": "* WHAT...Visibility one quarter mile or less in dense fog.\n\n* WHERE...Kiowa, and Prowers Counties.\n\n* WHEN...Until 10 AM MST this morning.\n\n* IMPACTS...Low visibility will make driving conditions hazardous,\nespecially near the Kansas border and along and north of highway\n50.",
+    "instruction": "If driving, slow down, use your headlights, and leave plenty of\ndistance ahead of you.",
+    "response": "Execute",
+    "note": null,
+    "parameters": {
+     "AWIPSidentifier": [
+      "NPWPUB"
+     ],
+     "WMOidentifier": [
+      "WWUS75 KPUB 131323"
+     ],
+     "NWSheadline": [
+      "DENSE FOG ADVISORY IN EFFECT UNTIL 10 AM MST THIS MORNING"
+     ],
+     "BLOCKCHANNEL": [
+      "EAS",
+      "NWEM",
+      "CMAS"
+     ],
+     "VTEC": [
+      "/O.NEW.KPUB.FG.Y.0003.261113T1323Z-261113T1700Z/"
+     ],
+     "eventEndingTime": [
+      "2026-11-13T10:00:00-07:00"
+     ]
+    },
+    "scope": "Public",
+    "code": "IPAWSv1.0",
+    "language": "en-US",
+    "web": "http://www.weather.gov",
+    "eventCode": {
+     "SAME": [
+      "NWS"
+     ],
+     "NationalWeatherService": [
+      "FGY"
+     ]
+    }
+   }
+  }
+ ],
+ "title": "Current watches, warnings, and advisories for Colorado",
+ "updated": "2026-11-13T14:53:08+00:00"
+}
