@@ -1,0 +1,51 @@
+{
+ "built": "2026-11-21T12:33:35Z",
+ "builtUnix": 1795264415,
+ "seconds": 116.4,
+ "bytes": 172871,
+ "downloaded": 2360322,
+ "requests": {
+  "dwr.state.co.us": 1,
+  "api.water.noaa.gov": 1,
+  "api.weather.gov": 1,
+  "api.waterdata.usgs.gov": 4,
+  "usdmdataservices.unl.edu": 10
+ },
+ "layers": {
+  "calls": {
+   "due": true,
+   "ok": true,
+   "rows": 45,
+   "seconds": 0.28,
+   "error": null
+  },
+  "flood": {
+   "due": true,
+   "ok": true,
+   "rows": 290,
+   "seconds": 2.52,
+   "error": null
+  },
+  "alerts": {
+   "due": true,
+   "ok": true,
+   "rows": 0,
+   "seconds": 0.15,
+   "error": null
+  },
+  "normals": {
+   "due": true,
+   "ok": true,
+   "rows": 2254,
+   "seconds": 103.06,
+   "error": null
+  },
+  "drought": {
+   "due": true,
+   "ok": true,
+   "rows": 401,
+   "seconds": 10.39,
+   "error": null
+  }
+ }
+}
